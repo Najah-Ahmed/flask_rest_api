@@ -50,7 +50,7 @@ def add_movie():
 def get_all_movies():
     all_movies = Movies.query.all()
     result = movies_schema.dump(all_movies)
-    return jsonify(result)
+    return jsonify({"movies:"result})
 
 
 @app.route('/movies/<string:public_id>', methods=['GET'])
